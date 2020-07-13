@@ -1,0 +1,10 @@
+<p>especialidade-view works!</p>
+<button (click)="getEspecialidades()">Pegar especialidades</button>
+<div *ngIf=especialidades>
+    <div *ngFor="let especialidade of especialidades">
+        <h3>{{especialidade.nome}}</h3>
+        <p>Id: {{ especialidade.id }} </p>
+    </div>
+    
+</div>
+

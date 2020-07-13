@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="logo">
+        <img src="../../assets/logo.png" alt="">
+    </div>
+    <h3>Crie sua conta</h3>
+    <form method="post" [formGroup]="cadastroForm" (submit)="onSubmit()">
+        <div>
+            <input class="campo" type="text" formControlName="username" placeholder="Nome">
+            <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                <div *ngIf="username.errors.required">
+                    <small class="error-text">Insira um nome de usuário</small>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input class="campo" type="email" formControlName="email" placeholder="Email">
+        </div>
+        <div>
+            <input class="campo" type="password" formControlName="password" placeholder="Senha">
+        </div>
+        <div>
+            <input class="campo" type="password" formControlName="passwordRepeat" placeholder="Repita a senha">
+            <div *ngIf="passwordRepeat.invalid && (passwordRepeat.dirty || passwordRepeat.touched)">
+                <div *ngIf="passwordRepeat.errors.mustMatch">
+                    <small class="error-text">As senhas não conferem</small>
+                </div>
+            </div>
+        </div>
+        <div class="botoes">
+            <button class="secondary" (click)="back()">Cancelar</button>
+            <button class="primary" type="submit">Cadastrar</button>
+        </div>
+    </form>
+
+</div>

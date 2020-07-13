@@ -1,0 +1,29 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="card">
+        <div class="row">
+            <h3>Consulta Clinica</h3>
+            <button class="primary btn-icon" routerLink="/marcarConsulta">
+                <img src="../../assets/mais.png">
+                <span>Nova Consulta</span>
+            </button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Especialidade</th>
+                    <th>Profissional</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr app-consulta-view *ngFor="let consulta of consultas" [consulta]="consulta" [dashboardComponent]="this"></tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

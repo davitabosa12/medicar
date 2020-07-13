@@ -1,0 +1,93 @@
+*{
+    font-family: Roboto, Arial, sans-serif;
+    transition: 0.3;
+}
+.container {
+    margin: 50px auto;
+    width: 500px;
+}
+
+img {
+    width: 180.74px;
+    height: 50px;
+    margin-left: 5px;
+    margin-bottom: 16px;
+}
+   
+.login {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    width: 310px;
+    border-radius: 20px;
+}
+form{
+    margin: 0 auto;
+    width: 100%;
+}
+label{
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+.campo{
+    width: 300px;
+    height: 30px;
+    border-radius: 7px;
+    border-color: #A8A8A8;
+    border-width: 1px;
+}
+.campo:focus{
+    outline-color: #888;
+}
+.botoes{
+    display: flex;
+    justify-content: space-between;
+}
+.entrada{
+    width: 200px;
+    margin-bottom: 16px;
+}
+.checkbox{
+    width: 1.2em;
+    height: 1.2em;
+    
+}
+.check-form{
+    display: flex;
+    align-items: center;
+}
+.check-form>label{
+    margin: 0;
+    margin-left: 8px;
+}
+#criar-conta{
+    background-color: transparent;
+    border: 0px transparent;
+    cursor: pointer;
+    color: #49B4BB;
+    transition: 0.4s;
+}
+
+#criar-conta:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    
+}
+#acessar{
+    transition: 0.4s;
+    border: 0px transparent;
+}
+#acessar:disabled{
+    background-color: #D9F1F3;
+}
+#acessar:enabled{
+    background-color: #49B4BB;
+    color: aliceblue;
+    cursor: pointer;
+    
+}
+button{
+    font-weight: 700;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+}

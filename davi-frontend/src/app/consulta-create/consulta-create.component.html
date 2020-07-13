@@ -1,0 +1,36 @@
+<div class="container">
+    <app-navbar></app-navbar>
+    <div class="card">
+        <h3>Nova Consulta</h3>
+        <form [formGroup]="consultaForm" (submit)="marcarConsulta()">
+            <select class="campo" formControlName="especialidade"
+                (change)="especialidadeChange(consultaForm.value.especialidade)">
+                <option value="" disabled selected>Especialidade</option>
+                <option *ngFor="let especialidade of especialidades" value="{{especialidade.id}}">{{especialidade.nome}}
+                </option>
+            </select>
+            <select class="campo" formControlName="medico" (change)="medicoChange(consultaForm.value.medico)">
+                <option value="" disabled selected>Medico</option>
+                <option *ngFor="let medico of medicos" value="{{medico.id}}">{{medico.nome}}</option>
+            </select>
+            <select class="campo" formControlName="data" (change)="agendaChange(consultaForm.value.data)">
+                <option value="" disabled selected>Data</option>
+                <option *ngFor="let agenda of agendas" value="{{agenda.id}}">{{agenda.dia}}</option>
+            </select>
+            <select class="campo" formControlName="hora">
+                <option value="" disabled selected>Horario</option>
+                <option *ngFor="let horario of horarios">{{horario}}</option>
+            </select>
+            <div class="botoes">
+                <button class="secondary" (click)="back()">Cancelar</button>
+                <button class="primary" type="submit" [disabled]="!consultaForm.valid">Confirmar</button>
+            </div>
+        </form>
+        <div class="message success" *ngIf="success">
+            {{success}}
+        </div>
+        <div class="message error" *ngIf="error">
+            {{error}}
+        </div>
+    </div>
+</div>

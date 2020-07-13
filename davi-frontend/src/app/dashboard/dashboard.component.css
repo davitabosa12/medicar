@@ -1,0 +1,46 @@
+
+.container{
+    margin: 30px;
+    margin-top: 16px;
+}
+
+.card{
+    border-color: gray;
+    border-width: 3px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    min-height: 500px;
+    padding: 16px;
+}
+h3{
+    text-align: left;
+}
+button.btn-icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+tbody>:nth-child(2){
+    background-color: rgba(63, 63, 63, 0.096);
+}
+
+table{
+    box-sizing: border-box;
+    width: 100%;
+    border-spacing: 0px;
+    
+}
+th{
+    font-size: small;
+    text-transform: uppercase;
+    color: #444444;
+    text-align: start;
+    font-weight: 600;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+    
+    <div class="login">
+        <div class="logo">
+            <img src="../../assets/logo.png" alt="">
+        </div>
+        <form class="column" [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)" method="POST">
+            <div class="entrada">
+                <input class="campo" type="text" formControlName="username" id="login" placeholder="Login">
+            </div>
+            <div class="entrada">
+                <input class="campo" type="password" formControlName="password" id="password" placeholder="Senha">
+            </div>
+            <div class="entrada check-form">
+                <input class="checkbox" formControlName="rememberMe" type="checkbox" id="lembrar-me"> <label for="lembrar-me"><small>Lembrar minha senha</small></label>
+            </div>
+            <div class="botoes">
+                <button id="criar-conta" routerLink="cadastro/">Criar conta</button>
+                <button id="acessar" type="submit" [disabled]="!loginForm.valid">Acessar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: Roboto, Arial, sans-serif;
+    transition: 0.3;
+}
+button{
+    font-weight: 700;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    border-color: transparent;
+}
+.campo{
+    width: 100%;
+    height: 30px;
+    border-radius: 7px;
+    border-color: #A8A8A8;
+    border-width: 1px;
+}
+.campo:focus{
+    outline-color: #888;
+}
+
+small.error-text{
+    color: red;
+    position: relative;
+}
+button{
+    font-size: 0.8em;
+}
+button.secondary{
+    background-color: transparent;
+    border: 0px transparent;
+    cursor: pointer;
+    color: #49B4BB;
+    transition: 0.4s;
+}
+button.secondary:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+button.primary:disabled{
+    background-color: #D9F1F3;
+    color: #BBB
+}
+button.primary{
+    background-color: #49B4BB;
+    color: aliceblue;
+    cursor: pointer;
+    
+}
+
+
+.message{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    height: 4rem;
+    border-radius: 5px;
+}
+.message.success{
+    background-color: green;
+    color: aliceblue;
+}
+
+.message.error{
+    background-color: red;
+    color: aliceblue;
+}

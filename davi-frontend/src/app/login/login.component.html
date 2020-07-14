@@ -4,7 +4,7 @@
         <div class="logo">
             <img src="../../assets/logo.png" alt="">
         </div>
-        <form class="column" [formGroup]="loginForm" (submit)="onSubmit(loginForm.value)" method="POST">
+        <form class="column" [formGroup]="loginForm" (keydown.enter)="onSubmit(loginForm.value)" (submit)="onSubmit(loginForm.value)" method="POST">
             <div class="entrada">
                 <input class="campo" type="text" formControlName="username" id="login" placeholder="Login">
             </div>
@@ -15,9 +15,12 @@
                 <input class="checkbox" formControlName="rememberMe" type="checkbox" id="lembrar-me"> <label for="lembrar-me"><small>Lembrar minha senha</small></label>
             </div>
             <div class="botoes">
-                <button id="criar-conta" routerLink="cadastro/">Criar conta</button>
+                <a id="criar-conta" routerLink="cadastro/">Criar conta</a>
                 <button id="acessar" type="submit" [disabled]="!loginForm.valid">Acessar</button>
             </div>
         </form>
+        <div class="message error" *ngIf="error">
+            {{error}}
+        </div>
     </div>
 </div>

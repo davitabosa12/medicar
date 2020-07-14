@@ -125,18 +125,23 @@ class ConsultaViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         # validar o horário se ainda for possivel marcar uma consulta nesse dia/hora.
-        consulta = Consulta.objects.get(id=pk)
-        if consulta:
-            agenda = consulta.agenda
-            horario = consulta.horario
-            """
-            ingenuamente validando os horarios da agenda e do horario
-            na próxima vez que for necessário verificar se a agenda/horário forem validos,
-            o proprio sistema rodará a rotina de validação e invalidará a agenda/horário indevidamente validado aqui.
-            """
-            agenda.valido = True
-            horario.valido = True
-        pass
+        try:
+            consulta = Consulta.objects.get(id=pk)
+            
+        except Consulta.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    
+        horario = consulta.horario
+        agenda = horario.agenda
+        """
+        ingenuamente validando os horarios da agenda e do horario
+        na próxima vez que for necessário verificar se a agenda/horário forem validos,
+        o proprio sistema rodará a rotina de validação e invalidará a agenda/horário indevidamente validado aqui.
+        """
+        agenda.valido = True
+        horario.valido = True
+        return Response(status=status.HTTP_204_NO_CONTENT)
+        
         
     
 class GroupViewSet(viewsets.ModelViewSet):

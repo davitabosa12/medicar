@@ -135,7 +135,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         # Acesso à API é restrito por padrão apenas a usuários autenticados.
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
 # django-cors-headers settings

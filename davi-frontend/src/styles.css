@@ -3,7 +3,7 @@
     font-family: Roboto, Arial, sans-serif;
     transition: 0.3;
 }
-button{
+button, input[type=submit]{
     font-weight: 700;
     width: 180px;
     height: 40px;
@@ -26,7 +26,7 @@ small.error-text{
     color: red;
     position: relative;
 }
-button{
+button, input[type="submit"]{
     font-size: 0.8em;
 }
 button.secondary{
@@ -40,11 +40,11 @@ button.secondary:hover{
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-button.primary:disabled{
+button.primary, input[type=submit].primary:disabled{
     background-color: #D9F1F3;
     color: #BBB
 }
-button.primary{
+button.primary, input[type=submit].primary{
     background-color: #49B4BB;
     color: aliceblue;
     cursor: pointer;
@@ -61,7 +61,7 @@ button.primary{
     justify-content: center;
     font-weight: bold;
     height: 4rem;
-    border-radius: 5px;
+    border-radius: 40px;
 }
 .message.success{
     background-color: green;

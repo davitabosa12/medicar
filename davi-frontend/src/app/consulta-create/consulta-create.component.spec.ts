@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConsultaCreateComponent } from './consulta-create.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ConsultaCreateComponent', () => {
   let component: ConsultaCreateComponent;
@@ -8,7 +9,8 @@ describe('ConsultaCreateComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConsultaCreateComponent ]
+      declarations: [ ConsultaCreateComponent ],
+      imports: [HttpClientModule],
     })
     .compileComponents();
   }));

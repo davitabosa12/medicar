@@ -31,25 +31,14 @@ export class AuthenticationService{
     }
   }
   
-  public authenticate(username: string, password: string, lembrarMe:boolean= false): Observable<boolean>{
+  public authenticate(username: string, password: string, lembrarMe:boolean= false){
     const body = {
       username: username,
       password: password
     };
     const request = this.http.post(Globals.BACKEND_URL + '/api-token-auth/', body);
-    var subject = new Subject<boolean>();
-    request.pipe(
-      catchError((err) =>{
-        subject.next(false);
-        return of(err);
-      })
-    ).subscribe((response) =>{
-      if(response instanceof HttpErrorResponse){
-        // a autenticação falhou.
-        console.log('Erro de autenticação: ' + (response as HttpErrorResponse).error.non_field_errors[0]);
-        subject.next(false);
-      } else {
-        var fromServer = response;
+    request.subscribe((response) =>{
+        var fromServer: any = response;
         console.log(fromServer.token)
         this._token = fromServer.token;
         this._username = username;
@@ -64,12 +53,16 @@ export class AuthenticationService{
           localStorage.setItem(AuthenticationService.LS_USER_KEY, JSON.stringify(userInfo));
         } else {
           console.log("Usuario não salvo no localStorage.")
-        }
-        subject.next(true);
+        } 
+    },
+    (error) =>{
+      if(error instanceof HttpErrorResponse){
+        // a autenticação falhou.
+        console.log('Erro de autenticação: ' + (error as HttpErrorResponse).error.non_field_errors[0]);
       }
-      subject.complete();
-    }); 
-    return subject.asObservable();
+    }
+    ); 
+    return request;
   }
   public logout(){
     localStorage.clear();

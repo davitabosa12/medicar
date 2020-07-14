@@ -85,9 +85,27 @@ label{
     cursor: pointer;
     
 }
+a{
+    font-weight: 600;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 button{
     font-weight: 700;
     width: 180px;
     height: 40px;
     border-radius: 8px;
+}
+
+.message{
+    width: 75%;
+    
+    margin-top: 16px;
 }

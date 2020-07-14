@@ -13,6 +13,27 @@ img {
     margin-top: 16px;
 }
 
+a{
+    font-weight: 600;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0px transparent;
+    cursor: pointer;
+    color: #49B4BB;
+    transition: 0.4s;
+}
+a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .botoes{
     display: flex;
     justify-content: space-between;

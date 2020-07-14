@@ -23,6 +23,6 @@ urlpatterns = [
     #Autenticação de usuário
     path('api-token-auth/', authtoken_views.obtain_auth_token),
     # Cadastro de novos usuários
-    path('register/', rest_api_views.UserCreate.as_view())
+    path('register/', rest_api_views.UserCreate.as_view(), name='register')
     
 ]

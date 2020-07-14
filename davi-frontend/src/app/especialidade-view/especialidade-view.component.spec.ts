@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EspecialidadeViewComponent } from './especialidade-view.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('EspecialidadeViewComponent', () => {
   let component: EspecialidadeViewComponent;
@@ -8,7 +9,8 @@ describe('EspecialidadeViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EspecialidadeViewComponent ]
+      declarations: [ EspecialidadeViewComponent ],
+      imports: [HttpClientModule],
     })
     .compileComponents();
   }));

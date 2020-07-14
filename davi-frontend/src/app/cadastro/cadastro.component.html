@@ -10,6 +10,9 @@
                 <div *ngIf="username.errors.required">
                     <small class="error-text">Insira um nome de usuário</small>
                 </div>
+                <div *ngIf="username.errors.usernameTaken">
+                    <small class="error-text">Um usuário com este nome já existe.</small>
+                </div>
             </div>
         </div>
         <div>
@@ -27,9 +30,8 @@
             </div>
         </div>
         <div class="botoes">
-            <button class="secondary" (click)="back()">Cancelar</button>
+            <a class="secondary" href="" (click)="back()">Cancelar</a>
             <button class="primary" type="submit">Cadastrar</button>
         </div>
     </form>
-
 </div>

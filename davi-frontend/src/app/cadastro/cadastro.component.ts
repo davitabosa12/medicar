@@ -20,7 +20,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.username = new FormControl('', Validators.required);
-    this.email = new FormControl('', Validators.email);
+    this.email = new FormControl('', [Validators.email, Validators.required]);
     this.password = new FormControl('', Validators.required);
     this.passwordRepeat = new FormControl('', [Validators.required, ]);
     this.cadastroForm = new FormGroup({
@@ -59,7 +59,15 @@ export class CadastroComponent implements OnInit {
         console.log("cadastrado com sucesso!");
         console.log(resp);
       }
-    })
+    },
+    (error) =>{
+      if(error instanceof HttpErrorResponse){
+        if(error.error.username){
+          this.username.setErrors({usernameTaken: true});
+        }
+      }
+    }
+    )
   }
 
   mustMatchValidator(field1, field2): ValidatorFn {
